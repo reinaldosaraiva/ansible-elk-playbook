@@ -6,13 +6,13 @@
 # Install Filebeat 
 
 - name: Install Filebeat with apt
-  apt:
-   name: filebeat
-   update_cache: yes
+  yum:
+    name: filebeat
+    state: latest 
 
-# Starting Filebeat
+ # Starting Filebeat
 
 - name: Starting Filebeat
-  service:
-   name: filebeat
-   state: started
+  systemd:
+      name: filebeat
+      state: started

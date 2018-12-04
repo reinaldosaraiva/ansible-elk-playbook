@@ -1,0 +1,9 @@
+- hosts: prefeito 
+  roles:
+    - role: install-java
+      java_packages:
+        - java-1.8.0-openjdk
+    - role: elasticsearch
+    - role: kibana
+    - role: logstash
+

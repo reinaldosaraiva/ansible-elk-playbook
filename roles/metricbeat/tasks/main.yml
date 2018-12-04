@@ -6,13 +6,13 @@
 # Install Metricbeat 
 
 - name: Install Metricbeat with apt
-  apt:
-   name: metricbeat
-   update_cache: yes
-    
-# Starting Metricbeat
+  yum:
+      name: metricbeat
+      state: latest 
+
+      # Starting Metricbeat
 
 - name: Starting Metricbeat
-  service:
-   name: metricbeat
-   state: started
+  systemd:
+      name: metricbeat
+      state: started

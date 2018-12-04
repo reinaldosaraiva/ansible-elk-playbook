@@ -21,9 +21,9 @@
 # Install Filebeat 
 
 - name: Install Filebeat with apt
-  apt:
+  yum:
    name: filebeat
-   update_cache: yes
+   state: latest
  
 # Replace Filebeat configuration to ship to Logz.io. 
 
@@ -35,6 +35,6 @@
 # Starting Filebeat
 
 - name: Starting Filebeat
-  service:
+  systemd:
    name: filebeat
    state: started
